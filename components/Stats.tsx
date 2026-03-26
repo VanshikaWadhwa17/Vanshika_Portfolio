@@ -1,0 +1,121 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import CountUp from "react-countup";
+import { Zap, Shield, BarChart3, Layers, Sparkles, Rocket } from "lucide-react";
+
+const stats = [
+  {
+    value: 38, suffix: "%",
+    label: "Security Risk Reduction",
+    desc: "Implementing RBAC & fine-grained access controls",
+    icon: Shield,
+    color: "from-[#6B2080] to-[#C57BB8]",
+    bg: "from-[#6B2080]/8 to-[#C57BB8]/8",
+  },
+  {
+    value: 5, suffix: "M+",
+    label: "Records Processed",
+    desc: "Across ML pipelines and data engineering projects",
+    icon: BarChart3,
+    color: "from-[#D4952A] to-[#C57BB8]",
+    bg: "from-[#D4952A]/8 to-[#C57BB8]/8",
+  },
+  {
+    value: 10, suffix: "x",
+    label: "Development Acceleration",
+    desc: "Via low-code agent platform & AI engineering superagent",
+    icon: Rocket,
+    color: "from-[#7A1535] to-[#C57BB8]",
+    bg: "from-[#7A1535]/8 to-[#C57BB8]/8",
+  },
+  {
+    value: 67, suffix: "%",
+    label: "Code Complexity Reduction",
+    desc: "Using microfrontends, Nx monorepo & modular architecture",
+    icon: Layers,
+    color: "from-[#6B2080] to-[#7A1535]",
+    bg: "from-[#6B2080]/8 to-[#7A1535]/8",
+  },
+  {
+    value: 73, suffix: "%",
+    label: "Org-wide Adoption",
+    desc: "Built LLM-based code assistant for VS Code & IntelliJ",
+    icon: Sparkles,
+    color: "from-[#D4952A] to-[#7A1535]",
+    bg: "from-[#D4952A]/8 to-[#7A1535]/8",
+  },
+  {
+    value: 1000, suffix: "+",
+    label: "Documents Processed",
+    desc: "Via LLM-powered intelligence pipelines",
+    icon: Zap,
+    color: "from-[#C57BB8] to-[#6B2080]",
+    bg: "from-[#C57BB8]/8 to-[#6B2080]/8",
+  },
+];
+
+export default function Stats() {
+  const [ref, inView] = useInView({ threshold: 0.2, triggerOnce: true });
+
+  return (
+    <section className="py-20 px-4 sm:px-6 relative overflow-hidden" ref={ref}>
+      <div className="absolute inset-0 bg-gradient-to-r from-[#6B2080] via-[#7A1535] to-[#D4952A] animate-gradient" style={{ backgroundSize: "200% 200%" }} />
+      <div className="absolute inset-0 opacity-20" style={{
+        backgroundImage: `radial-gradient(circle, white 1px, transparent 1px)`,
+        backgroundSize: "40px 40px",
+      }} />
+
+      <div className="max-w-6xl mx-auto relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-3">
+            Impact by the Numbers
+          </h2>
+          <p className="text-white/70 text-lg">Real results from real production systems</p>
+        </motion.div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {stats.map((stat, i) => {
+            const Icon = stat.icon;
+            return (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                whileHover={{ scale: 1.05, y: -4 }}
+                className={`bg-gradient-to-br ${stat.bg} rounded-2xl p-6 border border-white/50 shadow-lg shadow-black/10 backdrop-blur-sm`}
+              >
+                <div className="flex items-center gap-3 mb-3">
+                  <div className={`w-9 h-9 rounded-xl bg-gradient-to-br ${stat.color} flex items-center justify-center`}>
+                    <Icon className="w-4 h-4 text-white" />
+                  </div>
+                </div>
+                <div className="text-4xl font-extrabold text-slate-800 mb-1">
+                  {inView ? (
+                    <CountUp
+                      end={stat.value}
+                      duration={2}
+                      suffix={stat.suffix}
+                      delay={i * 0.1}
+                    />
+                  ) : (
+                    "0"
+                  )}
+                </div>
+                <p className="font-bold text-slate-700 text-sm mb-1">{stat.label}</p>
+                <p className="text-xs text-slate-500">{stat.desc}</p>
+              </motion.div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
