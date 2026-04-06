@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import {
-  ExternalLink, Github, Star, Layers,
+  ExternalLink, Github, Star, Layers, Globe,
   Bot, Newspaper, PlaneTakeoff, ShoppingCart, Droplets,
   ShieldAlert, HeartPulse, Store, Hospital, Zap,
   Radiation, Map, type LucideIcon,
@@ -17,6 +17,8 @@ type Project = {
   tags: string[];
   icon: LucideIcon;
   github: string;
+  /** Public hosted app (Vercel, Netlify, etc.) — omit if not deployed */
+  liveUrl?: string;
   featured: boolean;
   highlight?: string;
 };
@@ -31,6 +33,7 @@ const projects: Project[] = [
     tags: ["Agentic AI", "LangGraph", "Genetic Algorithms", "3D Visualization", "NASA Compliance", "Constraint Validation", "Predictive Design"],
     icon: Store,
     github: "https://github.com/VanshikaWadhwa17/HabitatForge",
+    liveUrl: "https://www.habitatforge.earth/",
     featured: true,
     highlight: "1 Star",
   },
@@ -42,6 +45,7 @@ const projects: Project[] = [
     tags: ["Python", "LLM", "Multi-Agent", "Session Replay Analysis", "Codebase Mapping", "Retrieval-Augmented Generation", "Human-in-the-Loop Validation"],
     icon: Newspaper,
     github: "https://github.com/VanshikaWadhwa17/BugScoutAI",
+    liveUrl: "https://bugscoutai.vercel.app",
     featured: true,
   },
   {
@@ -207,15 +211,27 @@ export default function Projects() {
                   </div>
                 </div>
 
-                {/* Footer */}
-                <div className="pt-2 border-t border-white/60">
+                {/* Footer — live demo + source */}
+                <div className="pt-2 border-t border-white/60 flex flex-col gap-2">
+                  {project.liveUrl ? (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-xl bg-[#E879B8] text-white text-sm font-semibold shadow-md shadow-[#E879B8]/25 hover:shadow-[#E879B8]/40 hover:bg-[#e060aa] transition-all"
+                    >
+                      <Globe className="w-4 h-4 shrink-0" />
+                      Live project
+                      <ExternalLink className="w-3.5 h-3.5 ml-auto opacity-90" />
+                    </a>
+                  ) : null}
                   <a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-[#E879B8] transition-colors group-hover:gap-3"
+                    className="flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-[#E879B8] transition-colors group-hover:gap-1"
                   >
-                    <Github className="w-4 h-4" />
+                    <Github className="w-4 h-4 shrink-0" />
                     View on GitHub
                     <ExternalLink className="w-3.5 h-3.5 ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
                   </a>

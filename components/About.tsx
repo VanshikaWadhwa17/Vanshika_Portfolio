@@ -8,7 +8,7 @@ const highlights = [
   {
     icon: GraduationCap,
     title: "MSc Computing (Artificial Intelligence)",
-    subtitle: "Dublin City University · 2:1 Expected · 2025–Present",
+    subtitle: "Dublin City University · 1:1 Expected · 2025–Present",
   },
   {
     icon: GraduationCap,
@@ -67,7 +67,7 @@ export default function About() {
                 <p className="text-slate-600 leading-relaxed text-lg mb-6">
                   I am currently pursuing my MSc in Computing (AI) at{" "}
                   <span className="font-semibold text-slate-800">Dublin City University</span> and expecting a{" "}
-                  <span className="font-semibold text-[#d946a8]">2:1</span> (Upper Second Class Honors). With 5+ years
+                  <span className="font-semibold text-[#d946a8]">1:1</span> (First Class Honors). With 5+ years
                   of experience spanning FinTech, sustainability, and enterprise platforms, I specialize in bridging
                   frontend engineering with AI-driven product innovation.
                 </p>

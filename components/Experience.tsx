@@ -87,7 +87,7 @@ const education = [
     degree: "M.Sc. Computing (Artificial Intelligence)",
     institution: "Dublin City University",
     period: "2025 – Present",
-    grade: "2:1 Expected",
+    grade: "1:1 Expected",
     icon: GraduationCap,
   },
   {

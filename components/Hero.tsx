@@ -16,7 +16,7 @@ const floatingElements = [
 const stats = [
   { value: "5+",  label: "Years of experience", color: "text-[#E879B8]" },
   { value: "5M+", label: "Records Processed", color: "text-[#d946a8]" },
-  { value: "2:1", label: "Expected MSc",      color: "text-[#f472b6]" },
+  { value: "1:1", label: "Expected MSc",      color: "text-[#f472b6]" },
 ];
 
 export default function Hero() {
