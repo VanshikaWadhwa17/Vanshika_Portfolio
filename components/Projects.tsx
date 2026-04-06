@@ -16,8 +16,6 @@ type Project = {
   longDesc: string;
   tags: string[];
   icon: LucideIcon;
-  color: string;
-  gradient: string;
   github: string;
   featured: boolean;
   highlight?: string;
@@ -32,8 +30,6 @@ const projects: Project[] = [
       "AI-powered space habitat design platform for Mars, Moon, and Gateway missions. Automates layout generation, validation, and 3D visualization while ensuring NASA compliance, cutting design timelines from months to hours.",
     tags: ["Agentic AI", "LangGraph", "Genetic Algorithms", "3D Visualization", "NASA Compliance", "Constraint Validation", "Predictive Design"],
     icon: Store,
-    color: "from-[#D4952A] to-[#6B2080]",
-    gradient: "from-[#D4952A]/5 to-[#6B2080]/5",
     github: "https://github.com/VanshikaWadhwa17/HabitatForge",
     featured: true,
     highlight: "1 Star",
@@ -45,8 +41,6 @@ const projects: Project[] = [
       "Self-learning, multi-agent LLM system for real-time UX friction detection and automated code fixes. Combines session replay analysis, codebase mapping, retrieval-augmented generation, and human-in-the-loop validation to continuously improve actionable solutions.",
     tags: ["Python", "LLM", "Multi-Agent", "Session Replay Analysis", "Codebase Mapping", "Retrieval-Augmented Generation", "Human-in-the-Loop Validation"],
     icon: Newspaper,
-    color: "from-[#7A1535] to-[#C57BB8]",
-    gradient: "from-[#7A1535]/5 to-[#C57BB8]/5",
     github: "https://github.com/VanshikaWadhwa17/BugScoutAI",
     featured: true,
   },
@@ -57,8 +51,6 @@ const projects: Project[] = [
       "Graph- and ARM-based system for interpretable, temporal, and hierarchy-aware substitute recommendations in e‑commerce and retail. Evaluates GNNs, temporal modeling, and rule-based learning for improved prediction and explainability.",
     tags: ["Python", "GNN", "Temporal Modeling", "Association Rule Mining (ARM)",  "E-commerce Analytics", "Rule-Based Learning", "Interpretability"],
     icon: ShoppingCart,
-    color: "from-[#D4952A] to-[#7A1535]",
-    gradient: "from-[#D4952A]/5 to-[#7A1535]/5",
     github: "https://github.com/VanshikaWadhwa17/Graphs-and-ARM-for-Substitute-Item-Mining",
     featured: false,
   },
@@ -69,8 +61,6 @@ const projects: Project[] = [
       "Mini search engine for Project Gutenberg books with indexing, three retrieval models (Structured, TF-IDF, BM25), evaluation, and a web interface. Allows users to search books by metadata or full text and compare results across models.",
     tags: ["Python", "Flask", "Information Retrieval", "TF-IDF", "BM25", "Web App", "Data Processing"],
     icon: Bot,
-    color: "from-[#6B2080] to-[#C57BB8]",
-    gradient: "from-[#6B2080]/5 to-[#C57BB8]/5",
     github: "https://github.com/VanshikaWadhwa17/Project-Gutenberg-VanshikaWadhwa",
     featured: true,
     highlight: "Pinned",
@@ -82,8 +72,6 @@ const projects: Project[] = [
       "Research-grade ML pipeline on 5M+ European environmental records. Spatio-temporal feature engineering, gradient boosting for nitrate/phosphate pollution risk prediction across 4 water body types.",
     tags: ["Python", "XGBoost", "Scikit-learn", "Pandas", "Feature Engineering"],
     icon: Droplets,
-    color: "from-[#6B2080] to-[#D4952A]",
-    gradient: "from-[#6B2080]/5 to-[#D4952A]/5",
     github: "https://github.com/VanshikaWadhwa17/SpainWaterAnalysis",
     featured: true,
     highlight: "5M+ records",
@@ -95,8 +83,6 @@ const projects: Project[] = [
       "End-to-end ML project for binary classification of loan defaults, including feature engineering, model comparison, hyperparameter tuning, threshold optimization, and business-impact evaluation in a single Jupyter notebook.",
     tags: ["Python", "Ensemble Learning", "Feature Engineering", "Model Comparison", "Hyperparameter Tuning", "Threshold Optimization", "Business-Impact Evaluation"],
     icon: ShieldAlert,
-    color: "from-[#7A1535] to-[#6B2080]",
-    gradient: "from-[#7A1535]/5 to-[#6B2080]/5",
     github: "https://github.com/VanshikaWadhwa17/LoanDefaultPrediction",
     featured: false,
   },
@@ -107,8 +93,6 @@ const projects: Project[] = [
       "End-to-end statistical + ML research on 250K+ public health records. Hypothesis testing → logistic regression → XGBoost achieving 86% accuracy on BRFSS2015 dataset.",
     tags: ["Python", "XGBoost", "Pandas", "Statistical Testing", "Public Health"],
     icon: HeartPulse,
-    color: "from-[#6B2080] to-[#7A1535]",
-    gradient: "from-[#6B2080]/5 to-[#7A1535]/5",
     github: "https://github.com/VanshikaWadhwa17/Diabetes_Statistical_Model",
     featured: false,
     highlight: "86% accuracy",
@@ -120,8 +104,6 @@ const projects: Project[] = [
       "End-to-end real-time airline delay data pipeline: FastAPI producer → Apache Kafka → Azure Event Hubs → Databricks PySpark (Bronze/Silver/Gold) → Snowflake → live Snowsight KPI dashboards.",
     tags: ["Python", "Kafka", "Azure", "Databricks", "Snowflake", "PySpark"],
     icon: PlaneTakeoff,
-    color: "from-[#D4952A] to-[#C57BB8]",
-    gradient: "from-[#D4952A]/5 to-[#C57BB8]/5",
     github: "https://github.com/VanshikaWadhwa17/US-flight-Delay-Data-Pipeline",
     featured: true,
     highlight: "Multi-layer Medallion",
@@ -151,12 +133,12 @@ export default function Projects() {
           transition={{ duration: 0.7 }}
           className="text-center mb-10"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#7A1535]/10 text-[#7A1535] text-sm font-semibold mb-4">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#E879B8]/12 text-[#c2186b] text-sm font-semibold mb-4">
             <Layers className="w-4 h-4" /> Projects
           </span>
           <h2 className="text-4xl sm:text-5xl font-extrabold text-slate-800 mb-4">
             What I&apos;ve{" "}
-            <span className="bg-gradient-to-r from-[#7A1535] to-[#6B2080] bg-clip-text text-transparent">
+            <span className="text-[#E879B8]">
               Built
             </span>
           </h2>
@@ -177,12 +159,12 @@ export default function Projects() {
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.4, delay: i * 0.05 }}
                 whileHover={{ y: -8, scale: 1.02 }}
-                className={`gradient-border glass rounded-2xl p-6 shadow-sm border border-white/80 bg-gradient-to-br ${project.gradient} flex flex-col gap-4 cursor-default group`}
+                className="gradient-border glass rounded-2xl p-6 shadow-sm border border-white/80 bg-[#E879B8]/5 flex flex-col gap-4 cursor-default group"
               >
                 {/* Top Row */}
                 <div className="flex items-start justify-between">
                   <div
-                    className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${project.color} flex items-center justify-center shadow-md`}
+                    className="w-12 h-12 rounded-2xl bg-[#E879B8] flex items-center justify-center shadow-md shadow-[#E879B8]/30"
                   >
                     <project.icon className="w-5 h-5 text-white" />
                   </div>
@@ -231,7 +213,7 @@ export default function Projects() {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-[#6B2080] transition-colors group-hover:gap-3"
+                    className="flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-[#E879B8] transition-colors group-hover:gap-3"
                   >
                     <Github className="w-4 h-4" />
                     View on GitHub
@@ -254,7 +236,7 @@ export default function Projects() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setShowAll(!showAll)}
-              className="px-8 py-3.5 rounded-2xl glass border-2 border-[#6B2080]/30 text-[#6B2080] font-semibold hover:border-[#6B2080]/60 transition-colors"
+              className="px-8 py-3.5 rounded-2xl glass border-2 border-[#E879B8]/35 text-[#c2186b] font-semibold hover:border-[#E879B8]/70 transition-colors"
             >
               {showAll ? "Show Less ↑" : `Show All ${projects.length} Projects ↓`}
             </motion.button>

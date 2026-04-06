@@ -7,6 +7,7 @@
    Gold Mustard #D4952A
    Burgundy     #7A1535
    Off-white bg #FAF8FC
+   Accent (solid) vibrant pink — replaces former multi-stop gradients
 ──────────────────────────────────────────────────────────── */
 
 :root {
@@ -16,6 +17,9 @@
   --gold:     #D4952A;
   --burgundy: #7A1535;
   --bg:       #FAF8FC;
+  --accent-pink: #E879B8;
+  --accent-pink-soft: rgba(232, 121, 184, 0.12);
+  --accent-pink-border: rgba(232, 121, 184, 0.35);
 }
 
 html { scroll-behavior: smooth; }
@@ -30,8 +34,8 @@ body {
 /* Custom scrollbar */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: #f3eff7; }
-::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #6B2080, #D4952A); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #7A1535, #C57BB8); }
+::-webkit-scrollbar-thumb { background: var(--accent-pink); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #d946a8; }
 
 /* ─── Animations ─────────────────────────────────────────── */
 @keyframes float {
@@ -45,20 +49,14 @@ body {
   50%       { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
 }
 
-@keyframes shimmer {
-  0%   { background-position: -200% center; }
-  100% { background-position:  200% center; }
-}
-
-@keyframes gradient-shift {
-  0%   { background-position:   0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position:   0% 50%; }
+@keyframes shimmer-solid {
+  0%, 100% { opacity: 1; filter: brightness(1); }
+  50%       { opacity: 0.92; filter: brightness(1.06); }
 }
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(107, 32, 128, 0.35); }
-  50%       { box-shadow: 0 0 45px rgba(107, 32, 128, 0.7), 0 0 80px rgba(212, 149, 42, 0.25); }
+  0%, 100% { box-shadow: 0 0 20px rgba(232, 121, 184, 0.35); }
+  50%       { box-shadow: 0 0 45px rgba(232, 121, 184, 0.55), 0 0 80px rgba(232, 121, 184, 0.2); }
 }
 
 @keyframes spin-slow {
@@ -68,18 +66,13 @@ body {
 
 .animate-float      { animation: float 6s ease-in-out infinite; }
 .animate-blob       { animation: blob  8s ease-in-out infinite; }
-.animate-gradient   { background-size: 200% 200%; animation: gradient-shift 4s ease infinite; }
 .animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
 .animate-spin-slow  { animation: spin-slow 20s linear infinite; }
 
-/* ─── Shimmer heading ────────────────────────────────────── */
+/* ─── Accent heading (solid pink, subtle pulse) ─────────── */
 .shimmer-text {
-  background: linear-gradient(90deg, #6B2080, #C57BB8, #D4952A, #7A1535, #C57BB8, #6B2080);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shimmer 4s linear infinite;
+  color: var(--accent-pink);
+  animation: shimmer-solid 3.5s ease-in-out infinite;
 }
 
 /* ─── Glass ──────────────────────────────────────────────── */
@@ -103,13 +96,13 @@ body {
 
 /* ─── Skill tag ──────────────────────────────────────────── */
 .skill-tag {
-  background: linear-gradient(135deg, rgba(107,32,128,0.12), rgba(197,123,184,0.12));
-  border: 1px solid rgba(107,32,128,0.28);
-  color: #6B2080;
+  background: var(--accent-pink-soft);
+  border: 1px solid var(--accent-pink-border);
+  color: #9d1d5c;
   transition: all 0.2s ease;
 }
 .skill-tag:hover {
-  background: linear-gradient(135deg, rgba(107,32,128,0.25), rgba(212,149,42,0.18));
+  background: rgba(232, 121, 184, 0.22);
   transform: translateY(-2px);
 }
 
@@ -120,7 +113,7 @@ body {
   position: absolute;
   bottom: -4px; left: 0;
   width: 0; height: 2px;
-  background: linear-gradient(90deg, #6B2080, #D4952A);
+  background: var(--accent-pink);
   transition: width 0.3s ease;
   border-radius: 1px;
 }
@@ -136,14 +129,14 @@ body {
   pointer-events: none;
 }
 
-/* ─── Gradient border card ───────────────────────────────── */
+/* ─── Gradient border card (solid accent ring on hover) ─── */
 .gradient-border { position: relative; background: white; border-radius: 16px; }
 .gradient-border::before {
   content: '';
   position: absolute;
   inset: -2px;
   border-radius: 18px;
-  background: linear-gradient(135deg, #6B2080, #C57BB8, #D4952A, #7A1535);
+  background: var(--accent-pink);
   z-index: -1;
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -152,10 +145,7 @@ body {
 
 /* ─── Timeline ───────────────────────────────────────────── */
 .timeline-line {
-  background: linear-gradient(180deg, #6B2080, #C57BB8, #D4952A);
+  background: var(--accent-pink);
 }
 
 @media (max-width: 768px) { .section-blob { display: none; } }
-
-
-

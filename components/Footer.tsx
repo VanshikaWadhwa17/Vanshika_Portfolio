@@ -8,18 +8,18 @@ export default function Footer() {
 
   return (
     <footer className="relative overflow-hidden bg-slate-900 text-white py-12 px-4 sm:px-6">
-      {/* Decorative gradient top */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#D4952A] to-transparent" />
+      {/* Accent top edge */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-[#E879B8]/80" />
 
       <div className="max-w-5xl mx-auto">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
           {/* Logo & credit */}
           <div className="flex flex-col items-center sm:items-start gap-2">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-[#6B2080] to-[#D4952A] flex items-center justify-center text-sm font-bold">
+              <div className="w-8 h-8 rounded-xl bg-[#E879B8] flex items-center justify-center text-sm font-bold text-white shadow-md shadow-[#E879B8]/30">
                 VW
               </div>
-              <span className="font-bold text-lg bg-gradient-to-r from-[#C57BB8] to-[#D4952A] bg-clip-text text-transparent">
+              <span className="font-bold text-lg text-[#E879B8]">
                 Vanshika Wadhwa
               </span>
             </div>

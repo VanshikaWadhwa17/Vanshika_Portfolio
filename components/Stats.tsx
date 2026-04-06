@@ -11,48 +11,36 @@ const stats = [
     label: "Security Risk Reduction",
     desc: "Implementing RBAC & fine-grained access controls",
     icon: Shield,
-    color: "from-[#6B2080] to-[#C57BB8]",
-    bg: "from-[#6B2080]/8 to-[#C57BB8]/8",
   },
   {
     value: 5, suffix: "M+",
     label: "Records Processed",
     desc: "Across ML pipelines and data engineering projects",
     icon: BarChart3,
-    color: "from-[#D4952A] to-[#C57BB8]",
-    bg: "from-[#D4952A]/8 to-[#C57BB8]/8",
   },
   {
     value: 10, suffix: "x",
     label: "Development Acceleration",
     desc: "Via low-code agent platform & AI engineering superagent",
     icon: Rocket,
-    color: "from-[#7A1535] to-[#C57BB8]",
-    bg: "from-[#7A1535]/8 to-[#C57BB8]/8",
   },
   {
     value: 67, suffix: "%",
     label: "Code Complexity Reduction",
     desc: "Using microfrontends, Nx monorepo & modular architecture",
     icon: Layers,
-    color: "from-[#6B2080] to-[#7A1535]",
-    bg: "from-[#6B2080]/8 to-[#7A1535]/8",
   },
   {
     value: 73, suffix: "%",
     label: "Org-wide Adoption",
     desc: "Built LLM-based code assistant for VS Code & IntelliJ",
     icon: Sparkles,
-    color: "from-[#D4952A] to-[#7A1535]",
-    bg: "from-[#D4952A]/8 to-[#7A1535]/8",
   },
   {
     value: 1000, suffix: "+",
     label: "Documents Processed",
     desc: "Via LLM-powered intelligence pipelines",
     icon: Zap,
-    color: "from-[#C57BB8] to-[#6B2080]",
-    bg: "from-[#C57BB8]/8 to-[#6B2080]/8",
   },
 ];
 
@@ -61,7 +49,7 @@ export default function Stats() {
 
   return (
     <section className="py-20 px-4 sm:px-6 relative overflow-hidden" ref={ref}>
-      <div className="absolute inset-0 bg-gradient-to-r from-[#6B2080] via-[#7A1535] to-[#D4952A] animate-gradient" style={{ backgroundSize: "200% 200%" }} />
+      <div className="absolute inset-0 bg-[#E879B8]" />
       <div className="absolute inset-0 opacity-20" style={{
         backgroundImage: `radial-gradient(circle, white 1px, transparent 1px)`,
         backgroundSize: "40px 40px",
@@ -90,10 +78,10 @@ export default function Stats() {
                 animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 whileHover={{ scale: 1.05, y: -4 }}
-                className={`bg-gradient-to-br ${stat.bg} rounded-2xl p-6 border border-white/50 shadow-lg shadow-black/10 backdrop-blur-sm`}
+                className="bg-white/90 rounded-2xl p-6 border border-white/50 shadow-lg shadow-black/10 backdrop-blur-sm"
               >
                 <div className="flex items-center gap-3 mb-3">
-                  <div className={`w-9 h-9 rounded-xl bg-gradient-to-br ${stat.color} flex items-center justify-center`}>
+                  <div className="w-9 h-9 rounded-xl bg-[#E879B8] flex items-center justify-center shadow-md shadow-[#E879B8]/30">
                     <Icon className="w-4 h-4 text-white" />
                   </div>
                 </div>

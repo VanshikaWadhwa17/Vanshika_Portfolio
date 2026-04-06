@@ -8,9 +8,7 @@ const skillCategories = [
   {
     icon: Brain,
     title: "AI & LLMs",
-    color: "from-[#6B2080] to-[#C57BB8]",
-    bg: "from-[#6B2080]/5 to-[#C57BB8]/5",
-    border: "border-[#6B2080]/20",
+    border: "border-[#E879B8]/25",
     skills: [
       "OpenAI API (GPT-4)",
       "HuggingFace Transformers",
@@ -24,9 +22,7 @@ const skillCategories = [
   {
     icon: BarChart3,
     title: "ML & Deep Learning",
-    color: "from-[#7A1535] to-[#C57BB8]",
-    bg: "from-[#7A1535]/5 to-[#C57BB8]/5",
-    border: "border-[#7A1535]/20",
+    border: "border-[#E879B8]/25",
     skills: [
       "Scikit-learn",
       "XGBoost",
@@ -40,17 +36,13 @@ const skillCategories = [
   {
     icon: Code2,
     title: "Languages",
-    color: "from-[#D4952A] to-[#C57BB8]",
-    bg: "from-[#D4952A]/5 to-[#C57BB8]/5",
-    border: "border-[#D4952A]/20",
+    border: "border-[#E879B8]/25",
     skills: ["Python", "SQL", "JavaScript", "R", "TypeScript"],
   },
   {
     icon: Database,
     title: "Data & Pipelines",
-    color: "from-[#6B2080] to-[#7A1535]",
-    bg: "from-[#6B2080]/5 to-[#7A1535]/5",
-    border: "border-[#6B2080]/20",
+    border: "border-[#E879B8]/25",
     skills: [
       "ETL / ELT",
       "Pandas / NumPy",
@@ -60,9 +52,7 @@ const skillCategories = [
   {
     icon: Cloud,
     title: "Cloud & DevOps",
-    color: "from-[#D4952A] to-[#7A1535]",
-    bg: "from-[#D4952A]/5 to-[#7A1535]/5",
-    border: "border-[#D4952A]/20",
+    border: "border-[#E879B8]/25",
     skills: [
       "GCP",
       "Docker",
@@ -76,9 +66,7 @@ const skillCategories = [
   {
     icon: Wrench,
     title: "Visualisation & BI",
-    color: "from-[#C57BB8] to-[#6B2080]",
-    bg: "from-[#C57BB8]/5 to-[#6B2080]/5",
-    border: "border-[#C57BB8]/20",
+    border: "border-[#E879B8]/25",
     skills: [
       "Power BI",
       "Streamlit",
@@ -113,12 +101,12 @@ export default function Skills() {
           transition={{ duration: 0.7 }}
           className="text-center mb-16"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#D4952A]/10 text-[#D4952A] text-sm font-semibold mb-4">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#E879B8]/12 text-[#c2186b] text-sm font-semibold mb-4">
             <Code2 className="w-4 h-4" /> Technical Skills
           </span>
           <h2 className="text-4xl sm:text-5xl font-extrabold text-slate-800 mb-4">
             My{" "}
-            <span className="bg-gradient-to-r from-[#D4952A] to-[#6B2080] bg-clip-text text-transparent">
+            <span className="text-[#E879B8]">
               Toolkit
             </span>
           </h2>
@@ -138,12 +126,12 @@ export default function Skills() {
                 animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 whileHover={{ y: -6, scale: 1.02 }}
-                className={`gradient-border glass rounded-2xl p-6 shadow-sm border ${category.border} transition-all duration-300 bg-gradient-to-br ${category.bg}`}
+                className={`gradient-border glass rounded-2xl p-6 shadow-sm border ${category.border} transition-all duration-300 bg-[#E879B8]/5`}
               >
                 {/* Category Header */}
                 <div className="flex items-center gap-3 mb-5">
                   <div
-                    className={`w-10 h-10 rounded-xl bg-gradient-to-br ${category.color} flex items-center justify-center shadow-md`}
+                    className="w-10 h-10 rounded-xl bg-[#E879B8] flex items-center justify-center shadow-md shadow-[#E879B8]/25"
                   >
                     <Icon className="w-5 h-5 text-white" />
                   </div>
@@ -179,12 +167,12 @@ export default function Skills() {
           </h3>
           <div className="grid sm:grid-cols-2 gap-x-12 gap-y-4">
             {[
-              { lang: "Python",     pct: 95, color: "from-[#6B2080] to-[#C57BB8]" },
-              { lang: "SQL",        pct: 88, color: "from-[#7A1535] to-[#C57BB8]" },
-              { lang: "R",          pct: 82, color: "from-[#D4952A] to-[#C57BB8]" },
-              { lang: "JavaScript", pct: 95, color: "from-[#6B2080] to-[#C57BB8]" },
-              { lang: "TypeScript",       pct: 70, color: "from-[#7A1535] to-[#6B2080]" },
-            ].map(({ lang, pct, color }) => (
+              { lang: "Python",     pct: 95 },
+              { lang: "SQL",        pct: 88 },
+              { lang: "R",          pct: 82 },
+              { lang: "JavaScript", pct: 95 },
+              { lang: "TypeScript", pct: 70 },
+            ].map(({ lang, pct }) => (
               <div key={lang}>
                 <div className="flex justify-between mb-1.5">
                   <span className="text-sm font-semibold text-slate-700">{lang}</span>
@@ -195,7 +183,7 @@ export default function Skills() {
                     initial={{ width: 0 }}
                     animate={inView ? { width: `${pct}%` } : {}}
                     transition={{ duration: 1.2, delay: 0.8, ease: "easeOut" }}
-                    className={`h-full bg-gradient-to-r ${color} rounded-full`}
+                    className="h-full bg-[#E879B8] rounded-full"
                   />
                 </div>
               </div>

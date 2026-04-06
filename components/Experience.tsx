@@ -11,8 +11,7 @@ const experiences = [
     location: "India",
     period: "Jun 2024 – August 2025",
     type: "Past",
-    color: "from-[#D4952A] to-[#C57BB8]",
-    dotColor: "bg-[#D4952A]",
+    dotColor: "bg-[#E879B8]",
     highlights: [
       "Redesigned IWBI's Nuxt 3 Website: This redesign not only refreshed the user interface but also improved accessibility, facilitated customer navigation, and aligned with IWBI’s branding standards, enriching the experience for its extensive daily user base.",
       "Microfrontend Migration & Code Optimization: Spearheaded the migration of IWBI's codebase from Nuxt 2 to Nuxt 3, employing a modular, microfrontend architecture to improve scalability. I independently handled the transformation of a core module and separated out a centralized UI-library for reusable components, styles, and design assets.",
@@ -40,8 +39,7 @@ const experiences = [
     location: "India",
     period: "Jul 2021 – Jun 2024",
     type: "Past",
-    color: "from-[#D4952A] to-[#C57BB8]",
-    dotColor: "bg-[#D4952A]",
+    dotColor: "bg-[#E879B8]",
     highlights: [
       "Worked on a production-grade MLaaS platform, enabling scalable deployment of machine learning models for predictive analytics and intelligent decision-making.",
       "Worked on the OneTru AI Studio - that allows low code building of agents, creating workflows, connecting MCPs and data sources",
@@ -67,8 +65,7 @@ const experiences = [
     location: "India",
     period: "Jun 2020 – Oct 2020",
     type: "Past",
-    color: "from-[#D4952A] to-[#C57BB8]",
-    dotColor: "bg-[#D4952A]",
+    dotColor: "bg-[#E879B8]",
     highlights: [
       "Worked as a full stack developer trainee",
       "Responsible for developing reusable, scalable and performance centric UI modules",
@@ -92,7 +89,6 @@ const education = [
     period: "2025 – Present",
     grade: "2:1 Expected",
     icon: GraduationCap,
-    color: "from-[#6B2080] to-[#C57BB8]",
   },
   {
     degree: "B.Tech Computer Science Engineering",
@@ -100,7 +96,6 @@ const education = [
     period: "2016 – 2020",
     grade: "CGPA: 7.5/10",
     icon: BookOpen,
-    color: "from-[#D4952A] to-[#C57BB8]",
   },
 ];
 
@@ -133,12 +128,12 @@ export default function Experience() {
           transition={{ duration: 0.7 }}
           className="text-center mb-16"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#D4952A]/10 text-[#D4952A] text-sm font-semibold mb-4">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#E879B8]/12 text-[#c2186b] text-sm font-semibold mb-4">
             <Briefcase className="w-4 h-4" /> Experience & Education
           </span>
           <h2 className="text-4xl sm:text-5xl font-extrabold text-slate-800 mb-4">
             My{" "}
-            <span className="bg-gradient-to-r from-[#D4952A] to-[#6B2080] bg-clip-text text-transparent">
+            <span className="text-[#E879B8]">
               Journey
             </span>
           </h2>
@@ -152,7 +147,7 @@ export default function Experience() {
           {/* Work Experience Timeline */}
           <div className="lg:col-span-2">
             <h3 className="text-xl font-bold text-slate-700 mb-6 flex items-center gap-2">
-              <TrendingUp className="w-5 h-5 text-[#6B2080]" /> Work Experience
+              <TrendingUp className="w-5 h-5 text-[#E879B8]" /> Work Experience
             </h3>
             <div className="relative">
               {/* Timeline line */}
@@ -208,7 +203,7 @@ export default function Experience() {
                       <ul className="space-y-2 mb-4">
                         {exp.highlights.map((h, j) => (
                           <li key={j} className="flex gap-2 text-sm text-slate-600">
-                            <span className="text-[#6B2080] mt-0.5 flex-shrink-0">▸</span>
+                            <span className="text-[#E879B8] mt-0.5 flex-shrink-0">▸</span>
                             {h}
                           </li>
                         ))}
@@ -237,7 +232,7 @@ export default function Experience() {
             {/* Education */}
             <div>
               <h3 className="text-xl font-bold text-slate-700 mb-4 flex items-center gap-2">
-                <Award className="w-5 h-5 text-[#D4952A]" /> Education
+                <Award className="w-5 h-5 text-[#E879B8]" /> Education
               </h3>
               <div className="flex flex-col gap-4">
                 {education.map((edu, i) => (
@@ -249,7 +244,7 @@ export default function Experience() {
                     whileHover={{ scale: 1.02 }}
                     className="glass rounded-2xl p-5 shadow-sm border border-white/80"
                   >
-                    <div className={`w-9 h-9 rounded-xl bg-gradient-to-br ${edu.color} flex items-center justify-center mb-3 shadow-sm`}>
+                    <div className="w-9 h-9 rounded-xl bg-[#E879B8] flex items-center justify-center mb-3 shadow-sm shadow-[#E879B8]/25">
                       <edu.icon className="w-4 h-4 text-white" />
                     </div>
                     <p className="font-bold text-slate-800 text-sm">{edu.degree}</p>
@@ -257,7 +252,7 @@ export default function Experience() {
                     <div className="flex justify-between items-center mt-2">
                       <span className="text-xs text-slate-500">{edu.period}</span>
                       <span
-                        className={`px-2.5 py-1 rounded-full bg-gradient-to-r ${edu.color} text-white text-xs font-bold`}
+                        className="px-2.5 py-1 rounded-full bg-[#E879B8] text-white text-xs font-bold shadow-sm shadow-[#E879B8]/20"
                       >
                         {edu.grade}
                       </span>
@@ -270,7 +265,7 @@ export default function Experience() {
             {/* Certifications */}
             <div>
               <h3 className="text-xl font-bold text-slate-700 mb-4 flex items-center gap-2">
-                <BadgeCheck className="w-5 h-5 text-[#6B2080]" /> Certifications
+                <BadgeCheck className="w-5 h-5 text-[#E879B8]" /> Certifications
               </h3>
               <div className="flex flex-col gap-3">
                 {certifications.map((cert, i) => (
@@ -282,7 +277,7 @@ export default function Experience() {
                     whileHover={{ x: 4 }}
                     className="glass rounded-xl p-4 shadow-sm border border-white/80 flex items-start gap-3"
                   >
-                    <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-[#6B2080] to-[#C57BB8] flex items-center justify-center flex-shrink-0 shadow-sm">
+                    <div className="w-7 h-7 rounded-lg bg-[#E879B8] flex items-center justify-center flex-shrink-0 shadow-sm shadow-[#E879B8]/25">
                       <BadgeCheck className="w-3.5 h-3.5 text-white" />
                     </div>
                     <div>

@@ -9,22 +9,16 @@ const highlights = [
     icon: GraduationCap,
     title: "MSc Computing (Artificial Intelligence)",
     subtitle: "Dublin City University · 2:1 Expected · 2025–Present",
-    color: "from-[#6B2080] to-[#C57BB8]",
-    bg: "bg-[#6B2080]/5",
   },
   {
     icon: GraduationCap,
     title: "B.Tech Computer Science Engineering",
     subtitle: "DIT University · CGPA 7.5/10 · 2016–2020",
-    color: "from-[#7A1535] to-[#C57BB8]",
-    bg: "bg-[#7A1535]/5",
   },
   {
     icon: MapPin,
     title: "Based in Dublin, Ireland",
     subtitle: "Open to remote & on-site opportunities",
-    color: "from-[#6B2080] to-[#7A1535]",
-    bg: "bg-[#6B2080]/5",
   },
 ];
 
@@ -44,12 +38,12 @@ export default function About() {
           transition={{ duration: 0.7 }}
           className="text-center mb-16"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#6B2080]/10 text-[#6B2080] text-sm font-semibold mb-4">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#E879B8]/12 text-[#c2186b] text-sm font-semibold mb-4">
             <Heart className="w-4 h-4" /> About Me
           </span>
           <h2 className="text-4xl sm:text-5xl font-extrabold text-slate-800 mb-4">
             Who I{" "}
-            <span className="bg-gradient-to-r from-[#6B2080] to-[#D4952A] bg-clip-text text-transparent">
+            <span className="text-[#E879B8]">
               Am
             </span>
           </h2>
@@ -68,12 +62,12 @@ export default function About() {
           >
             <div className="relative">
               {/* Decorative card behind */}
-              <div className="absolute -inset-4 bg-gradient-to-br from-[#6B2080]/10 to-[#D4952A]/10 rounded-3xl -rotate-2 opacity-60" />
+              <div className="absolute -inset-4 bg-[#E879B8]/10 rounded-3xl -rotate-2 opacity-60" />
               <div className="relative glass rounded-3xl p-8 shadow-xl border border-white/80">
                 <p className="text-slate-600 leading-relaxed text-lg mb-6">
                   I am currently pursuing my MSc in Computing (AI) at{" "}
                   <span className="font-semibold text-slate-800">Dublin City University</span> and expecting a{" "}
-                  <span className="font-semibold text-[#6B2080]">2:1</span> (Upper Second Class Honors). With 5+ years
+                  <span className="font-semibold text-[#d946a8]">2:1</span> (Upper Second Class Honors). With 5+ years
                   of experience spanning FinTech, sustainability, and enterprise platforms, I specialize in bridging
                   frontend engineering with AI-driven product innovation.
                 </p>
@@ -116,7 +110,7 @@ export default function About() {
                   className="glass rounded-2xl p-5 shadow-sm border border-white/80 flex items-center gap-5 cursor-default"
                 >
                   <div
-                    className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center flex-shrink-0 shadow-md`}
+                    className="w-12 h-12 rounded-2xl bg-[#E879B8] flex items-center justify-center flex-shrink-0 shadow-md shadow-[#E879B8]/25"
                   >
                     <Icon className="w-6 h-6 text-white" />
                   </div>
@@ -133,16 +127,16 @@ export default function About() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 1 }}
-              className="glass rounded-2xl p-5 shadow-sm border border-white/80 bg-gradient-to-r from-[#6B2080]/5 to-[#D4952A]/5"
+              className="glass rounded-2xl p-5 shadow-sm border border-white/80 bg-[#E879B8]/5"
             >
-              <p className="text-sm font-semibold text-[#6B2080] mb-3 flex items-center gap-1.5">
+              <p className="text-sm font-semibold text-[#c2186b] mb-3 flex items-center gap-1.5">
                 <MapPinned className="w-4 h-4" /> Quick Facts
               </p>
               <div className="grid grid-cols-2 gap-3 text-sm text-slate-600">
-                <div className="flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5 text-[#6B2080] flex-shrink-0" /> Dublin, Ireland</div>
-                <div className="flex items-center gap-1.5"><Globe className="w-3.5 h-3.5 text-[#D4952A] flex-shrink-0" /> 5 years of experience</div>
-                <div className="flex items-center gap-1.5"><Code2 className="w-3.5 h-3.5 text-[#7A1535] flex-shrink-0" /> Data Science Enthusiast</div>
-                <div className="flex items-center gap-1.5"><Coffee className="w-3.5 h-3.5 text-[#D4952A] flex-shrink-0" /> Fuelled by coffee</div>
+                <div className="flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5 text-[#E879B8] flex-shrink-0" /> Dublin, Ireland</div>
+                <div className="flex items-center gap-1.5"><Globe className="w-3.5 h-3.5 text-[#d946a8] flex-shrink-0" /> 5 years of experience</div>
+                <div className="flex items-center gap-1.5"><Code2 className="w-3.5 h-3.5 text-[#E879B8] flex-shrink-0" /> Data Science Enthusiast</div>
+                <div className="flex items-center gap-1.5"><Coffee className="w-3.5 h-3.5 text-[#f472b6] flex-shrink-0" /> Fuelled by coffee</div>
               </div>
             </motion.div>
           </motion.div>

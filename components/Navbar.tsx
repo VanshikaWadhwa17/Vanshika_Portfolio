@@ -41,7 +41,7 @@ export default function Navbar() {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "glass shadow-lg shadow-[#6B2080]/10"
+          ? "glass shadow-lg shadow-[#E879B8]/10"
           : "bg-transparent"
       }`}
     >
@@ -54,10 +54,10 @@ export default function Navbar() {
             whileTap={{ scale: 0.95 }}
             className="flex items-center gap-2"
           >
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#6B2080] to-[#D4952A] flex items-center justify-center shadow-lg shadow-[#6B2080]/30">
+            <div className="w-9 h-9 rounded-xl bg-[#E879B8] flex items-center justify-center shadow-lg shadow-[#E879B8]/35">
               <Sparkles className="w-4 h-4 text-white" />
             </div>
-            <span className="font-bold text-xl bg-gradient-to-r from-[#6B2080] to-[#D4952A] bg-clip-text text-transparent">
+            <span className="font-bold text-xl text-[#E879B8]">
               VW
             </span>
           </motion.a>
@@ -70,8 +70,8 @@ export default function Navbar() {
                 href={item.href}
                 className={`nav-link text-sm font-medium transition-colors ${
                   activeSection === item.href.slice(1)
-                    ? "text-[#6B2080] active"
-                    : "text-slate-600 hover:text-[#6B2080]"
+                    ? "text-[#d946a8] active"
+                    : "text-slate-600 hover:text-[#E879B8]"
                 }`}
               >
                 {item.label}
@@ -87,7 +87,7 @@ export default function Navbar() {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-4 py-2 rounded-xl bg-gradient-to-r from-[#6B2080] to-[#D4952A] text-white text-sm font-medium shadow-md shadow-[#6B2080]/20 hover:shadow-[#6B2080]/30 transition-shadow flex items-center gap-2"
+              className="px-4 py-2 rounded-xl bg-[#E879B8] text-white text-sm font-medium shadow-md shadow-[#E879B8]/25 hover:shadow-[#E879B8]/40 transition-shadow flex items-center gap-2"
             >
               <Download className="w-3.5 h-3.5" />
               Resume
@@ -98,7 +98,7 @@ export default function Navbar() {
           <motion.button
             whileTap={{ scale: 0.9 }}
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-lg text-slate-600 hover:bg-[#6B2080]/10 transition-colors"
+            className="md:hidden p-2 rounded-lg text-slate-600 hover:bg-[#E879B8]/10 transition-colors"
           >
             {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </motion.button>
@@ -124,7 +124,7 @@ export default function Navbar() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.05 }}
                   onClick={() => setIsOpen(false)}
-                  className="text-slate-700 font-medium py-2 hover:text-[#6B2080] transition-colors"
+                  className="text-slate-700 font-medium py-2 hover:text-[#E879B8] transition-colors"
                 >
                   {item.label}
                 </motion.a>
@@ -133,7 +133,7 @@ export default function Navbar() {
                 href="https://github.com/VanshikaWadhwa17"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#6B2080] to-[#D4952A] text-white text-sm font-medium text-center"
+                className="mt-2 px-4 py-2.5 rounded-xl bg-[#E879B8] text-white text-sm font-medium text-center shadow-md shadow-[#E879B8]/25"
               >
                 View GitHub
               </a>
