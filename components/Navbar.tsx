@@ -2,7 +2,9 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Download, Sparkles } from "lucide-react";
+import { Menu, X, Linkedin, Sparkles } from "lucide-react";
+
+const LINKEDIN_URL = "https://www.linkedin.com/in/vanshika-wadhwa/";
 
 const navItems = [
   { label: "Home", href: "#home" },
@@ -82,14 +84,14 @@ export default function Navbar() {
           {/* CTA */}
           <div className="hidden md:flex items-center gap-3">
             <motion.a
-              href="https://github.com/VanshikaWadhwa17"
+              href={LINKEDIN_URL}
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-4 py-2 rounded-xl bg-[#E879B8] text-white text-sm font-medium shadow-md shadow-[#E879B8]/25 hover:shadow-[#E879B8]/40 transition-shadow flex items-center gap-2"
             >
-              <Download className="w-3.5 h-3.5" />
+              <Linkedin className="w-3.5 h-3.5" />
               Resume
             </motion.a>
           </div>
@@ -130,12 +132,12 @@ export default function Navbar() {
                 </motion.a>
               ))}
               <a
-                href="https://github.com/VanshikaWadhwa17"
+                href={LINKEDIN_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-2 px-4 py-2.5 rounded-xl bg-[#E879B8] text-white text-sm font-medium text-center shadow-md shadow-[#E879B8]/25"
               >
-                View GitHub
+                Resume
               </a>
             </div>
           </motion.div>

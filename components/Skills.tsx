@@ -2,42 +2,54 @@
 
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { Code2, Database, Cloud, Brain, BarChart3, Wrench } from "lucide-react";
+import { Code2, Database, Cloud, Brain, BarChart3, Wrench, TrendingUp } from "lucide-react";
 
 const skillCategories = [
-  {
-    icon: Brain,
-    title: "AI & LLMs",
-    border: "border-[#E879B8]/25",
-    skills: [
-      "OpenAI API (GPT-4)",
-      "HuggingFace Transformers",
-      "LangChain",
-      "MCP Agents",
-      "Agentic AI",
-      "Prompt Engineering",
-      "RAG Pipelines",
-    ],
-  },
-  {
-    icon: BarChart3,
-    title: "ML & Deep Learning",
-    border: "border-[#E879B8]/25",
-    skills: [
-      "Scikit-learn",
-      "XGBoost",
-      "LSTM (TensorFlow/Keras)",
-      "SARIMA / TBATS / ETS",
-      "Random Forest",
-      "Logistic Regression",
-      "Associate Rule Mining"
-    ],
-  },
   {
     icon: Code2,
     title: "Languages",
     border: "border-[#E879B8]/25",
-    skills: ["Python", "SQL", "JavaScript", "R", "TypeScript"],
+    skills: ["Python", "R", "SQL", "Java", "JavaScript", "TypeScript"],
+  },
+  {
+    icon: BarChart3,
+    title: "Statistical Modeling & Forecasting",
+    border: "border-[#E879B8]/25",
+    skills: [
+      "Revenue Forecasting",
+      "Churn Prediction",
+      "Customer Segmentation",
+      "LTV Modeling",
+      "Regression Analysis",
+      "Classification",
+      "XGBoost",
+      "Random Forest",
+      "Logistic Regression",
+      "ARIMA",
+      "SARIMA",
+      "SARIMAX",
+      "Time Series Forecasting",
+      "Association Rule Mining",
+      "Graph Neural Networks",
+    ],
+  },
+  {
+    icon: TrendingUp,
+    title: "Finance & Revenue Analytics",
+    border: "border-[#E879B8]/25",
+    skills: [
+      "ARR",
+      "MRR",
+      "NRR",
+      "ARPU",
+      "Customer Lifetime Value (LTV)",
+      "Revenue Intelligence",
+      "Revenue-at-Risk Analysis",
+      "Expansion Propensity Modeling",
+      "Cohort Analysis",
+      "SaaS Metrics",
+      "Financial Modeling",
+    ],
   },
   {
     icon: Database,
@@ -45,8 +57,27 @@ const skillCategories = [
     border: "border-[#E879B8]/25",
     skills: [
       "ETL / ELT",
-      "Pandas / NumPy",
-      "PostgreSQL / MongoDB",
+      "Pandas",
+      "NumPy",
+      "Scikit-learn",
+      "PostgreSQL",
+      "MongoDB",
+      "Databricks",
+      "Apache Airflow",
+    ],
+  },
+  {
+    icon: Wrench,
+    title: "Visualisation & BI",
+    border: "border-[#E879B8]/25",
+    skills: [
+      "Power BI",
+      "Tableau",
+      "Streamlit",
+      "Matplotlib",
+      "Seaborn",
+      "Plotly",
+      "Snowsight",
     ],
   },
   {
@@ -60,23 +91,21 @@ const skillCategories = [
       "FastAPI",
       "CI/CD",
       "Git / GitHub",
-      "REST APIs"
+      "REST APIs",
     ],
   },
   {
-    icon: Wrench,
-    title: "Visualisation & BI",
+    icon: Brain,
+    title: "LLM & Agentic AI",
     border: "border-[#E879B8]/25",
     skills: [
-      "Power BI",
-      "Streamlit",
-      "Snowsight",
-      "Matplotlib / Seaborn",
-      "Plotly",
-      "Excel",
-      "MERN Stack",
-      "Vue",
-      "Nuxt"
+      "LangChain",
+      "RAG Pipelines",
+      "Multi-Agent Systems",
+      "OpenAI API",
+      "Prompt Engineering",
+      "MCP Agents",
+      "Agentic AI",
     ],
   },
 ];
@@ -111,7 +140,7 @@ export default function Skills() {
             </span>
           </h2>
           <p className="text-slate-500 max-w-xl mx-auto text-lg">
-            A comprehensive stack spanning AI, data engineering, cloud, and full-stack development.
+            A comprehensive stack spanning statistical modeling, revenue analytics, data engineering, and agentic AI.
           </p>
         </motion.div>
 
@@ -169,7 +198,6 @@ export default function Skills() {
             {[
               { lang: "Python",     pct: 95 },
               { lang: "SQL",        pct: 88 },
-              { lang: "R",          pct: 82 },
               { lang: "JavaScript", pct: 95 },
               { lang: "TypeScript", pct: 70 },
             ].map(({ lang, pct }) => (

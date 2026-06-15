@@ -6,7 +6,7 @@ import { useInView } from "react-intersection-observer";
 import {
   ExternalLink, Github, Star, Layers, Globe,
   Bot, Newspaper, PlaneTakeoff, ShoppingCart, Droplets,
-  ShieldAlert, HeartPulse, Store, Hospital, Zap,
+  ShieldAlert, HeartPulse, Store, BarChart3,
   Radiation, Map, type LucideIcon,
 } from "lucide-react";
 
@@ -47,6 +47,17 @@ const projects: Project[] = [
     github: "https://github.com/VanshikaWadhwa17/BugScoutAI",
     liveUrl: "https://bugscoutai.vercel.app",
     featured: true,
+  },
+  {
+    title: "Revenue Intelligence System",
+    description: "SaaS revenue analytics & forecasting platform",
+    longDesc:
+      "Production-style revenue intelligence platform: PostgreSQL warehouse, churn and expansion ML (XGBoost), MRR/ARPU/LTV metrics, 6-month revenue forecasting, scenario simulation, and an executive Streamlit dashboard for revenue-at-risk and customer health scoring.",
+    tags: ["Python", "PostgreSQL", "XGBoost", "Streamlit", "Revenue Forecasting", "Churn Analytics", "Cohort Analysis"],
+    icon: BarChart3,
+    github: "https://github.com/VanshikaWadhwa17/Revenue-Intelligence-System",
+    featured: true,
+    highlight: "SaaS Analytics",
   },
   {
     title: "GAN's and ARM for Substitute Item Mining",
